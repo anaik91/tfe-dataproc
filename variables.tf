@@ -3,7 +3,10 @@ Copyright 2021 Google LLC. This software is provided as-is, without warranty or 
 Your use of it is subject to your agreement with Google.
 */
 
-
+variable "cluster_name" {
+  description = "bucket"
+  type        = string
+}
 variable "storage_bucket" {
   description = "bucket"
   type        = string
@@ -28,6 +31,12 @@ variable "kms_key" {
 
 variable "project_id" {
   description = "The project ID to host the cluster in"
+}
+
+
+variable "vpc_project" {
+  description = "Project Containing VPC"
+  type        = string
 }
 
 variable "network" {

@@ -1,6 +1,8 @@
 # Retrieve the subnet data to get the network name
 data "google_compute_subnetwork" "dataproc" {
-  self_link = var.vpc_subnet
+  name = var.subnet
+  region = var.region
+  project = var.vpc_project
 }
 
 # Create firewall rule required for cluster interconnectivity

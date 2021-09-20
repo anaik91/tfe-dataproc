@@ -6,7 +6,6 @@ Your use of it is subject to your agreement with Google.
   Provider credential configuration
  *****************************************/
 provider "google" {
-  alias                 = "create_dataset"
   user_project_override = true
   access_token          = var.access_token
 }

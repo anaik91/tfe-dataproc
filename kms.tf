@@ -11,7 +11,6 @@ resource "google_kms_crypto_key" "dataproc-crypto-key" {
 }
 
 resource "google_kms_crypto_key_iam_member" "compute_encrypto_key" {
-  provider      = google.create_dataset
   crypto_key_id = google_kms_crypto_key.dataproc-crypto-key.id
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   member        = "serviceAccount:service-${data.google_project.project_dataproc.number}@compute-system.iam.gserviceaccount.com"
@@ -22,7 +21,6 @@ data "google_storage_project_service_account" "gcs_account" {
 }
 
 resource "google_kms_crypto_key_iam_member" "storage_encrypto_key" {
-  provider      = google.create_dataset
   crypto_key_id = google_kms_crypto_key.dataproc-crypto-key.id
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   member        = "serviceAccount:${data.google_storage_project_service_account.gcs_account.email_address}"

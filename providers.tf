@@ -20,4 +20,5 @@ provider "google" {
   # credentials           = file("my-project-d358100c9524.json")
   alias                 = "create_dataset"
   user_project_override = true
+  access_token          = var.access_token
 }

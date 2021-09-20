@@ -29,8 +29,8 @@ resource "google_dataproc_cluster" "mycluster" {
     }
 
     worker_config {
-      num_instances    = 2
-      machine_type     = "e2-medium"
+      num_instances = 2
+      machine_type  = "e2-medium"
       disk_config {
         boot_disk_size_gb = 30
       }
@@ -41,10 +41,10 @@ resource "google_dataproc_cluster" "mycluster" {
     }
 
     gce_cluster_config {
-      tags       = ["dataproc-${var.cluster_name}"]
+      tags = ["dataproc-${var.cluster_name}"]
       # network    = var.network
-      subnetwork = var.subnet
-      internal_ip_only  = true
+      subnetwork       = var.subnet
+      internal_ip_only = true
       # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
       service_account = google_service_account.dataproc_service_account.email
       service_account_scopes = [

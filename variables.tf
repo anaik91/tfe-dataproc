@@ -3,6 +3,12 @@ Copyright 2021 Google LLC. This software is provided as-is, without warranty or 
 Your use of it is subject to your agreement with Google.
 */
 
+variable "access_token" {
+  description = "bucket"
+  type        = string
+  sensitive   = true
+}
+
 variable "cluster_name" {
   description = "bucket"
   type        = string
